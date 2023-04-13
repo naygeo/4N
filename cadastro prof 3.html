@@ -1,0 +1,87 @@
+<html>
+<head>
+<style>
+    form {
+       background-color:white;
+}
+    h2, label {
+       color:purple;
+}
+    input[type=text] {
+       width:50%;
+       padding:12px 20px;
+       margin:8px 0;
+       box-sizing:border-box;
+       border:2px solid hotpink;
+       border-radius:4px;
+}
+    input [type=submit] {
+	   background-color:ligthblue;
+	   border:dotted;
+	   color:blue;
+	   padding:16px 32px;
+	   text-decoration:none;
+	   margin:4px 2px;
+	   cursor:pointer;
+}   
+</style>
+</head>
+
+		<body>
+	     <h2>Cadastro de Professores</h2>
+		 
+			<form name="CadProf" 
+			action= "" onsubmit="return CriticaCampos()">
+					<label for="matprof">Matrícula do professor:</label><br>
+					<input type="text" name="matprof"><br><br>
+					<label for="nomprof">Nome do professor:</label><Br>		
+					<input type="text" name="nomprof"><br><br>
+					<label for="curprof">Curso do professor:</label><Br>
+					<input type="text" name="curprof"><br><br>
+					<label for="disprof">Disciplina do professor:</label><br>
+					<input type="text" name="disprof"><br><br>
+					<input type="submit" value="ENVIAR">
+		    </form>
+			
+			<button type ="button" onclick=LimpaCampos() onmouseover="MostrarTexto(this)" onmouseout="ApagaTexto(this)">?????</button>
+			
+			<p>Quando clicar no botão ENVIAR,uma crítica de todos os campos deve acontecer.</p>
+			<p>Mostrar uma mensagem caso haja algum erro ou mostrar uma mensagem de que o cadastro será enviado para o servidor de BD</p>
+			<p>o Botão ????? deve mostrar a mensagem APAGA quando o mouse for colocado sobre ele e voltar para ????? quando o mouse for retirado</p>
+			<p>Quando o botão APAGA for clicado todos os campos do formulario deverão ser limpos</p>
+			
+		<script>
+			
+			  function CriticaCampos () {
+			    if (document.forms["CadProf"]["matprof"].value =="") {
+				   window.alert ("Matrícula do professor não pode ficar vazio!")
+				   return false
+			}	else if(document.forms["CadProf"]["nomprof"].value =="") {
+				   window.alert ("Nome do Professor não pode ficar vazio!") 
+				   return false
+			}	else if(document.forms["CadProf"]["curprof"].value =="") {
+				   window.alert ("Curso do Professor não pode ficar vazio!") 
+				   return false
+			}	else if(document.forms["CadProf"]["disprof"].value =="") {
+				   window.alert ("Diciplina do Professor não pode ficar vazio!") 
+                   return false
+			}	else 
+				   window.alert ("Todos os campos estão preenchidos. Serão enviados para o SGBD!") 	
+             	   return true	
+            }	
+			
+			   function LimpaCampos() {
+			      document.forms["CadProf"]["matprof"].value=""
+				  document.forms["CadProf"]["nomprof"].value=""
+				  document.forms["CadProf"]["curprof"].value=""
+				  document.forms["CadProf"]["disprof"].value=""
+				}
+			    function MostrarTexto(obj) {
+				  obj.innerHTML = "APAGA"
+				}
+				function ApagaTexto(obj) {
+				  obj.innerHTML = "?????"
+				}
+        </script>			
+		</body>			
+</html>
