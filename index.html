@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +9,43 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Menu Responsivo</title>
 </head>
+
 <body>
     <header>
         <nav class="nav-bar">
-            <div class="Logo">
+            <div class="logo">
                 <h1>Logo</h1>
             </div>
             <div class="nav-list">
-               <ul>
-                <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
-                <li class="nav-item"><a href="#"class="nav-link">Projetos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-               </ul>
-           </div>
+                <ul>
+                    <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"> Sobre</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="#">Entrar</a></button>
+            </div>
 
-           <div class="login-button">
-            <button type="button">Entrar</button>
-           </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
+            </div>
         </nav>
-
-        <!--Parte abaixo é referente ao menu responsivo-->
         <div class="mobile-menu">
             <ul>
-             <li class="nav-item"><a href="https://www.w3schools.com/html/html_responsive.asp" class="nav-link">Inicio</a></li>
-             <li class="nav-item"><a href="https://openai.com/blog/chatgpt"class="nav-link">Projetos</a></li>
-             <li class="nav-item"><a href="https://github.com/naygeo?tab=repositories" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
             </ul>
-        </div>
 
-        <div class="login-button">
-         <button type="button">Entrar</button>
+            <div class="login-button">
+                <button><a href="#">Entrar</a></button>
+            </div>
         </div>
+    </header>
+
+    <script src="js/script.js"></script>
+</body>
+
+
+</html>
