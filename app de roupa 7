@@ -1,49 +1,82 @@
-plugins {
-    id("com.android.application")
-}
+/////mainactivity/////
 
-android {
-    namespace = "com.teste.appderoupa"
-    compileSdk = 33
 
-    defaultConfig {
-        applicationId = "com.teste.appderoupa"
-        minSdk = 21
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+package com.teste.approupa
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+import android.annotation.SuppressLint
+import android.app.ActivityManager
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import androidx.lifecycle.VIEW_MODEL_STORE_OWNER_KEY
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+private lateinit var binding: ActivityManager
+  var clicked  = false
+@SuppressLint("ResourceAsColor")
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityManager.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btfesta.set0nclicktener {
+            clicked = true
+            if (clicked) {
+                binding.btfesta.setBackgroundResource(R.drawable.bg_button_enabled)
+                binding.btfesta.setTextColor(color.WHITE)
+                binding.btesportivo.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btesportivo.setTextColor(R.color.dark_gray)
+                binding.btjeans.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btjeans.setTextColor(R.color.dark_gray)
+                binding.btcasual.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btcasual.setTextColor(R.color.dark_gray)
+                binding.recylerViewProducts.visibility = View.INVISIBLE
+                binding.txtListTitle.test = "festa"
+            }
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    viewBinding{
-        enabled = true
+        binding.btesportivo.set0nclicktener {
+            clicked = true
+            if (clicked) {
+                binding.btesportivo.setBackgroundResourc(R.drawable.bg_button_enabled)
+                binding.btesportivo.setTextColor(color.WHITE)
+                binding.btfesta.setBackgroundResource(R.drawable.bg_button_disabled)
+                binding.btfesta.setTextColor(R.color.dark_gray)
+                binding.btjeans.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btjeans.setTextColor(R.color.dark_gray)
+                binding.btcasual.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btcasual.setTextColor(R.color.dark_gray)
+                binding.recylerViewProducts.visibility = View.INVISIBLE
+                binding.txtListTitle.test = "esportivo"
+
+            }
+        }
+        binding.btjeans.set0nclicktener {
+            clicked = true
+            if (clicked) {
+                binding.btjeans.setBackgroundResourc(R.drawable.bg_button_enabled)
+                binding.btjeans.setTextColor(color.WHITE)
+                binding.btfesta.setBackgroundResource(R.drawable.bg_button_disabled)
+                binding.btfesta.setTextColor(R.color.dark_gray)
+                binding.btesportivo.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btesportivo.setTextColor(R.color.dark_gray)
+                binding.btcasual.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btcasual.setTextColor(R.color.dark_gray)
+                binding.recylerViewProducts.visibility = View.VISIBLE
+                binding.txtListTitle.test = "jeans"
     }
 }
-
-dependencies {
-
-    implementation("androidx.core:core-ktx:1.8.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.5.8")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-}
+        binding.btcasaul.set0nclicktener {
+            clicked = true
+            if (clicked) {
+                binding.btcasual.setBackgroundResourc(R.drawable.bg_button_enabled)
+                binding.btcasual.setTextColor(color.WHITE)
+                binding.btfesta.setBackgroundResource(R.drawable.bg_button_disabled)
+                binding.btfesta.setTextColor(R.color.dark_gray)
+                binding.btesportivo.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btesportivo.setTextColor(R.color.dark_gray)
+                binding.btjeans.setBackgroundResourc(R.drawable.bg_button_disabled)
+                binding.btjeans.setTextColor(R.color.dark_gray)
+                binding.recylerViewProducts.visibility = View.INVISIBLE
+                binding.txtListTitle.test = "casual"
+            }
+        }
