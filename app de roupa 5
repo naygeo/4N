@@ -1,14 +1,12 @@
-package com.teste.appderoupa;
+//////themes//////
 
-import androidx.appcompat.app.AppCompatActivity;
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Approupa" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorSecondaryVariant">@color/red</item>
+    </style>
 
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}
+    <style name="Theme.Approupa" parent="Base.Theme.Approupa" />
+</resources>
